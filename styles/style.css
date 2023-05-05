@@ -1,0 +1,92 @@
+/* Define as margens, preenchimento e box-sizing padrão para todas as tags */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+/* Define o estilo do corpo do documento */
+body{
+    font-family: 'Righteous', sans-serif; /* Define a fonte utilizada no corpo do documento */
+    display: flex; /* Define que o corpo do documento será um container flexível */
+    justify-content: center; /* Centraliza os itens horizontalmente dentro do container */
+    align-items: center; /* Centraliza os itens verticalmente dentro do container */
+    height: 100vh; /* Define a altura do corpo do documento para ocupar toda a altura da janela */
+    background-color: #c7cdd3; /* Define a cor de fundo do corpo do documento */
+}
+
+/* Define as propriedades padrão para todas as cartas */
+.card{
+    width: 150px; /* Define a largura de cada carta */
+    height: 150px; /* Define a altura de cada carta */
+    position: relative; /* Define que a posição das cartas será relativa */
+
+    transform-style: preserve-3d; /* Define que as cartas terão uma perspectiva 3D */
+}
+
+/* Define as propriedades para o verso e o anverso de cada carta */
+.card_back, .card_front{
+    width: 100%; /* Define a largura do verso e do anverso para ocupar todo o espaço disponível */
+    height: 100%; /* Define a altura do verso e do anverso para ocupar todo o espaço disponível */
+    position: absolute; /* Define que a posição será absoluta */
+    display: flex; /* Define que os elementos dentro das cartas serão containers flexíveis */
+    justify-content: center; /* Centraliza os itens horizontalmente dentro das cartas */
+    align-items: center; /* Centraliza os itens verticalmente dentro das cartas */
+    border-radius: 20px; /* Define o raio dos cantos das cartas */
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.45); /* Define a sombra das cartas */
+    /* Para as cartas invertidas não serem visíveis */
+    backface-visibility: hidden;
+    transition: transform .5s; /* Define a transição que será aplicada às cartas */
+}
+
+/* Define o estilo das cartas quando forem viradas */
+.flip{
+    transform: rotateY(180deg); /* Gira a carta em torno do eixo Y em 180 graus */
+}
+
+/* Define o estilo do anverso das cartas */
+.card_front{
+    transform: rotateY(180deg); /* Gira a carta em torno do eixo Y em 180 graus */
+    background-color: #101c2c; /* Define a cor de fundo do anverso das cartas */
+}
+
+/* Define o estilo do verso das cartas */
+.card_back{
+    color: #101c2c; /* Define a cor do texto no verso das cartas */
+    background-color: #05c3ff; /* Define a cor de fundo do verso das cartas */
+    font-size: 30px; /* Define o tamanho da fonte no verso das cartas */
+}
+
+#gameOver{
+    
+    position: absolute;/* Define a posição do elemento como absoluta, para que possa ser posicionado em relação ao elemento pai */
+    width: 100%;/* Define a largura do elemento como 100% da largura do elemento pai */
+    height: 100%; /* Define a altura do elemento como 100% da altura do elemento pai */
+    background-color: rgba(0, 0, 0, 0.9); /* Define a cor de fundo do elemento como um rgba preto com 90% de transparência */
+    color: white; /* Define a cor do texto como branco */
+    font-size: 30px; /* Define o tamanho da fonte como 30 pixels */
+    display: none; /* Define o elemento como oculto por padrão */
+    justify-content: center; /* Define o alinhamento horizontal do conteúdo como centralizado */
+    align-items: center; /* Define o alinhamento vertical do conteúdo como centralizado */
+    flex-direction: column; /* Define a direção do flex como coluna */
+    top:0; /* Define a posição superior do elemento como 0, para que esteja no topo */
+}
+
+/* Estiliza o botão de reinício do jogo */
+#restart{
+    padding: 20px; /* Define um preenchimento interno de 20 pixels */
+    font-size: 20px; /* Define o tamanho da fonte como 20 pixels */
+    background-color: yellow ; /* Define a cor de fundo como amarelo */
+    border: none; /* Remove a borda do botão */
+    border-radius: 10px; /* Define o raio de borda como 10 pixels */
+    margin-top: 10px; /* Define a margem superior como 10 pixels */
+}
+
+/* Define o estilo do elemento que contém as cartas do jogo */
+#gameBoard{
+    max-width: 700px; /* Define a largura máxima do elemento como 700 pixels */
+    display: grid; /* Define o estilo de exibição do elemento como grid */
+    grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr; /* Define o modelo de grade do elemento com 5 colunas de largura igual e 4 linhas de altura igual */
+    gap: 20px; /* Define o espaçamento entre as grades como 20 pixels */
+}
