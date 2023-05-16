@@ -1,5 +1,7 @@
 Jogo da Memória
 
+https://jogo-da-memoria-mu-ruby.vercel.app/
+
 Este é um jogo da memória em JavaScript. O jogo consiste em virar as cartas para encontrar pares correspondentes. O objetivo é encontrar todos os pares em um número mínimo de jogadas.
 
 Funcionalidades
